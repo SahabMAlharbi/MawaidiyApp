@@ -1,0 +1,19 @@
+//
+//  ViewController.swift
+//  Mawaidiy
+//
+//  Created by Sahab Alharbi on 29/05/1443 AH.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+
+}
+
