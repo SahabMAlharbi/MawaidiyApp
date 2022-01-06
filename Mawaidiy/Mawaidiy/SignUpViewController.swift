@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var repasswordTF: UITextField!
+    @IBOutlet weak var phoneN: UITextField!
     @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var iDNumberTF: UITextField!
     
@@ -25,22 +25,25 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        if emailTF.text == "" || nameTF.text == "" || iDNumberTF.text == "" {
+        Auth.auth().createUser(withEmail: emailTF.text!, password: passwordTF.text!) { result, error in
+            if self.emailTF.text == "" || self.nameTF.text == "" || self.iDNumberTF.text == "" || self.phoneN.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your name and ID Number and email and password", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
-            present(alertController, animated: true, completion: nil)
+                self.present(alertController, animated: true, completion: nil)
             
         } else {
-            firestore.collection("Users").document(nameTF.text!).setData(
+            self.firestore.collection("Users").document(self.nameTF.text!).setData(
                 [
-                "name" : nameTF.text!,
-                "email" : emailTF.text!,
-                "age" : ageTF.text!,
-                "ID Number" : iDNumberTF.text!,
-                "userID" :userID
+                    "name" : self.nameTF.text!,
+                    "email" : self.emailTF.text!,
+                    "age" : self.ageTF.text!,
+                    "ID Number" : self.iDNumberTF.text!,
+                    "Phone Number" : self.phoneN.text!,
+                    "userid" : self.userID
+               
                 
 
              ]
@@ -64,9 +67,10 @@ class SignUpViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-        }
+         }
         
 
+      }
     }
    
 }

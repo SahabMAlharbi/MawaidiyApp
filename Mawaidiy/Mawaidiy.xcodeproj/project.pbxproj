@@ -25,6 +25,7 @@
 		C6B58E9D2782E3A0007BEA37 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58E9C2782E3A0007BEA37 /* TabBar.swift */; };
 		C6B58E9F2782E987007BEA37 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58E9E2782E987007BEA37 /* SignInViewController.swift */; };
 		C6B58EA127830378007BEA37 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58EA027830378007BEA37 /* UsersViewController.swift */; };
+		C6B58EA62785C0FC007BEA37 /* NewMawidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58EA52785C0FB007BEA37 /* NewMawidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C6B58E9C2782E3A0007BEA37 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		C6B58E9E2782E987007BEA37 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C6B58EA027830378007BEA37 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		C6B58EA52785C0FB007BEA37 /* NewMawidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMawidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				C684E141278179990083AAF2 /* SceneDelegate.swift */,
 				C684E143278179990083AAF2 /* ViewController.swift */,
 				C6B58E902781C33A007BEA37 /* MawaiydyTV.swift */,
+				C6B58EA52785C0FB007BEA37 /* NewMawidViewController.swift */,
 				C6B58E922781C351007BEA37 /* MawaiydyTVCell.swift */,
 				C6B58E942781C46A007BEA37 /* ProfileViewController.swift */,
 				C6B58EA027830378007BEA37 /* UsersViewController.swift */,
@@ -182,6 +185,7 @@
 			files = (
 				C6B58E9D2782E3A0007BEA37 /* TabBar.swift in Sources */,
 				C6B58E952781C46A007BEA37 /* ProfileViewController.swift in Sources */,
+				C6B58EA62785C0FC007BEA37 /* NewMawidViewController.swift in Sources */,
 				C684E144278179990083AAF2 /* ViewController.swift in Sources */,
 				C6B58EA127830378007BEA37 /* UsersViewController.swift in Sources */,
 				C6B58E9B2782DB64007BEA37 /* SignUpViewController.swift in Sources */,

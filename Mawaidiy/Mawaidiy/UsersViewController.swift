@@ -25,12 +25,13 @@ class UsersViewController: UIViewController {
             }
             self.users = document.map({ (QueryDocumentSnapshot) -> Users in
                 let data = QueryDocumentSnapshot.data()
-                let id = data["userID"] as? String ?? ""
+//                let id = data["userID"] as? String ?? ""
                 let name = data["name"] as? String ?? "NO VALUE"
                 let email = data["email"] as? String ?? "NO VALUE"
                 let age = data["age"] as? String ?? "NO VALUE"
                 let idnumber = data["ID Number"] as? String ?? "NO VALUE"
-                return Users(id: id,name: name, email: email,age: age,idnumber: idnumber)
+                let phoneN = data["Phone Number"] as? String ?? "NO VALUE"
+                return Users(name: name, email: email,age: age,idnumber: idnumber, phoneN: phoneN)
             })
         }
     }
@@ -46,10 +47,11 @@ class UsersViewController: UIViewController {
     */
 
 }
-struct Users: Identifiable {
-    var id : String = UUID().uuidString
+struct Users {
+//    var id : String = UUID().uuidString
     var name : String
     var email : String
     var age : String
     var idnumber : String
+    var phoneN : String
 }
