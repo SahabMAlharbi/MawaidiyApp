@@ -10,7 +10,7 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     let firestore = Firestore.firestore()
-    let userID = Auth.auth().currentUser?.uid
+//    let userID = Auth.auth().currentUser?.uid
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -35,14 +35,13 @@ class SignUpViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             
         } else {
-            self.firestore.collection("Users").document(self.nameTF.text!).setData(
-                [
+            self.firestore.collection("Users").addDocument(data:[
                     "name" : self.nameTF.text!,
                     "email" : self.emailTF.text!,
                     "age" : self.ageTF.text!,
                     "ID Number" : self.iDNumberTF.text!,
                     "Phone Number" : self.phoneN.text!,
-                    "userid" : self.userID
+                    "userID" : Auth.auth().currentUser!.uid
                
                 
 

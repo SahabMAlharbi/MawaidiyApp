@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
             
         } else {
             
-            Auth.auth().signIn(withEmail: self.emailTF.text!, password: self.passwordTF.text!) { (user, error) in
+            Auth.auth().signIn(withEmail: self.emailTF.text!, password: self.passwordTF.text!) { result, error in
                 
                 if error == nil {
                     

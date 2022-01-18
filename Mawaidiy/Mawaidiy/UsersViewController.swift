@@ -11,8 +11,9 @@ import Firebase
 class UsersViewController: UIViewController {
 
     let firestore = Firestore.firestore()
-    let userID = Auth.auth().currentUser?.uid
+    let user = Auth.auth().currentUser?.uid
     var users = [Users]()
+    var mawaid = [Mawid]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +35,24 @@ class UsersViewController: UIViewController {
                 return Users(name: name, email: email,age: age,idnumber: idnumber, phoneN: phoneN)
             })
         }
+//        func loadMawaid(){
+//            firestore.collection("Mawaid").addSnapshotListener { (QuerySnapshot, error) in
+//                guard let document = QuerySnapshot?.documents else{
+//                    return
+//                }
+//                self.mawaid = document.map({ (QueryDocumentSnapshot) -> Mawid in
+//                    let data = QueryDocumentSnapshot.data()
+//        //                let id = data["userID"] as? String ?? ""
+//                    let clinicName = data["clinic Name"] as? String ?? "NO VALUE"
+//                    let patientName = data["patient Name"] as? String ?? "NO VALUE"
+//                    let description = data["description"] as? String ?? "NO VALUE"
+//                    let time = data["time"] as? String ?? "NO VALUE"
+//                    let place = data["place"] as? String ?? "NO VALUE"
+//                    return Mawid(clinicName: clinicName, patientName: patientName,description: description,time: time, place: place)
+//                })
+//            }
+//        }
+
     }
 
     /*
@@ -55,3 +74,27 @@ struct Users {
     var idnumber : String
     var phoneN : String
 }
+struct Mawid {
+    var clinicName : String
+    var patientName : String
+    var description : String
+    var time : String
+    var place : String
+}
+struct Events {
+    var eventName : String
+    var startDate: Date
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd 'of' MMMM"
+        return formatter.string(from: startDate)
+    }
+    var endDate : Date
+    var datestring: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd 'of' MMMM"
+        return formatter.string(from: startDate)
+    }
+    var notes : String
+}
+

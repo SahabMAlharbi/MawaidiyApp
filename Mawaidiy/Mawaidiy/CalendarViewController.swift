@@ -8,19 +8,70 @@
 import UIKit
 import EventKit
 import EventKitUI
+import Firebase
 
-class CalendarViewController: UIViewController, EKEventViewDelegate {
-    func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
-        controller.dismiss(animated: true, completion: nil)
-
-    }
+class CalendarViewController: UIViewController,EKEventEditViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        
+        firestore.collection("Events").document().setData(
+            [
+                "event Name" : self.newEvent?.title! ,
+                "start date" : self.newEvent?.startDate!.formatted() ,
+                "end date" : self.newEvent?.endDate!.formatted() ,
+                "notes" : self.newEvent?.notes! ,
+                "userid" : self.user!
+           
+            
+
+         ]
+        )
+        { error in
+            
+            if error == nil {
+                print("You have successfully make a new event")
+                
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBar
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+                
+            } else{
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    
+    controller.dismiss(animated: true, completion: nil)
+}
+    
+    
+ 
+    
+   
+    
+    
+    let firestore = Firestore.firestore()
+    let user = Auth.auth().currentUser?.uid
+    
+    
+    @IBOutlet weak var eventCV: UICollectionView!
     let eventStore = EKEventStore()
     var calendars: [EKCalendar]?
+    var newEvent:EKEvent?
+    var events = [Events]()
+
 //    let calendars = eventStore.calendars(for: .event)
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventCV.dataSource = self
+        eventCV.delegate = self
+        loadEvents()
     }
     
     
@@ -32,23 +83,43 @@ class CalendarViewController: UIViewController, EKEventViewDelegate {
   @IBAction func addEvent(_ sender: Any) {
    eventStore.requestAccess(to: .event) { [weak self] success, error in
        if success, error == nil {
-           DispatchQueue.main.async {
-               guard let store = self?.eventStore else { return }
-                                  let newEvent = EKEvent(eventStore: store)
-                                  newEvent.title = ""
-                                  newEvent.startDate = Date()
-                                  newEvent.endDate = Date()
-                                  let othervc = EKEventEditViewController()
-                                  othervc.eventStore = store
-                                  othervc.event = newEvent
-                                  self?.present(othervc, animated: true, completion: nil)
-               }
+           
+          
     
+           DispatchQueue.global(qos: .userInteractive).sync {
+               DispatchQueue.main.async {
+                   var date = Date()
+                   guard let store = self?.eventStore else { return }
+                   self?.newEvent = EKEvent(eventStore: store)
+//                   self?.newEvent?.title = ""
+//                   self?.newEvent?.startDate = Date()
+//                   self?.newEvent?.endDate = Date()
+                                      let othervc = EKEventEditViewController()
+                                      othervc.eventStore = store
+                   othervc.event = self?.newEvent
+                   othervc.editViewDelegate = self
+                   
+                   othervc.dismiss(animated: true, completion: nil)
+//                   print("_____________")
+//                   print("newEvent")
+////                   print(newEvent)
+//                   print("othervc")
+//                   print(othervc)
+//                   print("_____________")
+                                      self?.present(othervc, animated: true, completion: nil)
+                   
+                   date = Date.now
+                   UserDefaults.standard.set(date, forKey: "Calender")
+                   let calender = UserDefaults.standard.object(forKey: "Calender")
+                   
+                   print(calender)
+                   }
+           }
+           
     
     
     
        }
-    
     
     
     
@@ -148,7 +219,27 @@ class CalendarViewController: UIViewController, EKEventViewDelegate {
                                 
             }
         }
-        
+    func loadEvents() {
+        self.firestore.collection("Events")
+            .whereField("userid", isEqualTo: self.user as Any)
+            .getDocuments(
+                completion: {
+                    (qurySnapShot, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        for document in qurySnapShot!.documents {
+                            let data = document.data()
+                            
+                            self.events.append(Events(eventName: data["event Name"] as! String, startDate: (data["start date"]as? Timestamp)?.dateValue() ?? Date(), endDate: (data["end date"]as? Timestamp)?.dateValue() ?? Date(), notes: data["notes"] as! String))
+                            
+                        }
+                    }
+                    self.eventCV.reloadData()
+                }
+            )
+    }
+ 
     }
 
     
@@ -209,4 +300,54 @@ class CalendarViewController: UIViewController, EKEventViewDelegate {
 //    */
 //
 
+//extension CalendarViewController {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        events.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "tvcell") as! EventTableViewCell
+//        cell.eventName.text = events[indexPath.row].eventName
+//        return cell
+//    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selected = events[indexPath.row]
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "eventdetails") as! EventDetails
+//        vc.events = selected
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//
+//}
 
+extension CalendarViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        events.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cvcell", for: indexPath) as! EventCollectionViewCell
+        cell.eventName.text = events[indexPath.row].eventName
+        cell.date.text = events[indexPath.row].dateString
+
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selected = events[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "eventdetails") as! EventDetails
+        vc.events = selected
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+   
+
+}
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+}

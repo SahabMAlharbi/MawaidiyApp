@@ -8,6 +8,11 @@
 import UIKit
 
 class MawaiydyTVCell: UITableViewCell {
+    @IBOutlet weak var clinicName: UILabel!
+    @IBOutlet weak var time: UILabel!
+   
+    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
