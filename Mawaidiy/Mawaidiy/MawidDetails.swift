@@ -52,7 +52,18 @@ class MawidDetails: UIViewController {
             }
         }
         mawidV.layer.cornerRadius = 10
-      
+        clinicL.layer.cornerRadius = 10
+        clinicL.layer.masksToBounds = true
+        patientNameL.layer.cornerRadius = 10
+        patientNameL.layer.masksToBounds = true
+        timeL.layer.cornerRadius = 10
+        timeL.layer.masksToBounds = true
+        doctorNameL.layer.cornerRadius = 10
+        doctorNameL.layer.masksToBounds = true
+        placeL.layer.cornerRadius = 10
+        placeL.layer.masksToBounds = true
+        descriptionL.layer.cornerRadius = 20
+        descriptionL.layer.masksToBounds = true
 
     }
     
