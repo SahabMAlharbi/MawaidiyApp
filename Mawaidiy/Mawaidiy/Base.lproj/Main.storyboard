@@ -45,17 +45,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Q4P-mD-wY3">
                                 <rect key="frame" x="50" y="391" width="100" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRG-7P-E1M">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRG-7P-E1M">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-fn-4Op">
                                         <rect key="frame" x="0.0" y="50" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="11"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -72,15 +78,21 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-i2-yqA">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss9-qu-SAC">
                                         <rect key="frame" x="0.0" y="50" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="15"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -97,11 +109,17 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mawaid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81s-7P-Yi6">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -114,15 +132,21 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-hp-6Qb">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoj-ah-9Sa">
                                         <rect key="frame" x="0.0" y="50" width="100" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color2"/>
                                         <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="11"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -225,7 +249,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="Color2"/>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="date" destination="6pq-fg-CgN" id="cTl-WC-eca"/>
@@ -311,7 +335,7 @@
                                                 <constraint firstItem="XPl-Sn-kc1" firstAttribute="leading" secondItem="bu0-Z2-rSf" secondAttribute="leadingMargin" constant="28" id="tjL-w3-Q7C"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="Color3"/>
                                         <connections>
                                             <outlet property="clinicName" destination="IGV-AB-VoL" id="wqu-4y-GUS"/>
                                             <outlet property="time" destination="XPl-Sn-kc1" id="FhY-rO-rYu"/>
@@ -360,7 +384,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="clinic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGP-gc-NNj">
                                         <rect key="frame" x="162" y="134" width="144" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -368,17 +392,17 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="patient" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sv-Jb-uYa">
                                         <rect key="frame" x="79" y="53" width="163" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="doctor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As6-iA-3mJ">
                                         <rect key="frame" x="13" y="134" width="147" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -393,11 +417,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="place" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwG-H7-wM7">
                                         <rect key="frame" x="18" y="232" width="142" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="1" green="0.9871120323" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="patient name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-zY-dW9">
                                         <rect key="frame" x="79" y="15" width="163" height="30"/>
@@ -437,10 +461,16 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-ER-hfZ">
                                         <rect key="frame" x="162" y="233" width="144" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8r-25-xOt">
                                         <rect key="frame" x="162" y="280" width="144" height="30"/>
@@ -449,16 +479,16 @@
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-B6-tx1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-B6-tx1">
                                         <rect key="frame" x="18" y="335" width="277" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Color5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="0.61652088169999997" green="0.52383175309999996" blue="0.37119372890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.95138997757322941" blue="0.92709232473128078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="Color4"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="apV-lx-dyK"/>
@@ -547,7 +577,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="Color2"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gc8-2U-1vp"/>
@@ -581,25 +611,25 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clinic name " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NVO-Yg-ZrM">
                                 <rect key="frame" x="50" y="249" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-M9-RKx">
                                 <rect key="frame" x="50" y="313" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Doctor name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L8v-rv-drA">
                                 <rect key="frame" x="50" y="377" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-Dv-dQH">
                                 <rect key="frame" x="50" y="500" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Nbd-OA-k3W"/>
                                 </constraints>
@@ -608,7 +638,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5C-N2-byV">
                                 <rect key="frame" x="50" y="566" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="VBU-zW-KdX"/>
                                 </constraints>
@@ -631,7 +661,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIm-Un-BxM">
                                 <rect key="frame" x="50" y="437" width="314" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Color2"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -743,7 +773,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="755" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70K-Ll-mqp">
-                                <rect key="frame" x="50" y="89" width="314" height="78.5"/>
+                                <rect key="frame" x="50" y="74" width="314" height="103.5"/>
                                 <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="50"/>
                                 <color key="textColor" red="0.61040934520000001" green="0.54076895899999999" blue="0.61652088169999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -869,14 +899,14 @@
                             <constraint firstItem="rxO-Eh-rLu" firstAttribute="leading" secondItem="T88-b9-pAy" secondAttribute="leading" constant="50" id="CGv-Ly-Zki"/>
                             <constraint firstItem="aLF-DX-762" firstAttribute="top" secondItem="rxO-Eh-rLu" secondAttribute="bottom" constant="9" id="Eqi-4x-CTw"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="UJA-of-LEq" secondAttribute="trailing" constant="70" id="Fyy-ao-g0B"/>
-                            <constraint firstItem="70K-Ll-mqp" firstAttribute="top" secondItem="T88-b9-pAy" secondAttribute="top" constant="45" id="I0p-6v-GeV"/>
+                            <constraint firstItem="70K-Ll-mqp" firstAttribute="top" secondItem="T88-b9-pAy" secondAttribute="top" constant="30" id="I0p-6v-GeV"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="70K-Ll-mqp" secondAttribute="trailing" constant="50" id="I9h-tq-Ywa"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="rxO-Eh-rLu" secondAttribute="trailing" constant="50" id="JXR-7j-cKW"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="29Z-28-gbV" secondAttribute="trailing" constant="50" id="KTU-hS-1LN"/>
                             <constraint firstItem="kkH-XP-RA3" firstAttribute="centerY" secondItem="hak-Lh-fAL" secondAttribute="centerY" constant="9" id="MGH-0j-xcu"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="chI-Ja-ZRk" secondAttribute="trailing" constant="50" id="P6U-45-QNp"/>
                             <constraint firstItem="rxO-Eh-rLu" firstAttribute="top" secondItem="29Z-28-gbV" secondAttribute="bottom" constant="18" id="PX8-vU-lS7"/>
-                            <constraint firstItem="Tb2-qB-XyA" firstAttribute="top" secondItem="70K-Ll-mqp" secondAttribute="bottom" constant="40" id="PZI-F9-fhi"/>
+                            <constraint firstItem="Tb2-qB-XyA" firstAttribute="top" secondItem="70K-Ll-mqp" secondAttribute="bottom" constant="30" id="PZI-F9-fhi"/>
                             <constraint firstItem="IeT-4w-YI2" firstAttribute="top" secondItem="aLF-DX-762" secondAttribute="bottom" constant="10" id="Pib-i9-Qv6"/>
                             <constraint firstItem="chI-Ja-ZRk" firstAttribute="leading" secondItem="T88-b9-pAy" secondAttribute="leading" constant="50" id="Psz-TU-Tt9"/>
                             <constraint firstItem="T88-b9-pAy" firstAttribute="trailing" secondItem="EON-Cr-chw" secondAttribute="trailing" constant="50" id="PxT-p0-Jqi"/>
@@ -1072,6 +1102,18 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="Color1">
             <color red="0.99215686319999996" green="0.98039215800000001" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Color2">
+            <color red="1" green="0.95517113099999995" blue="0.86384220199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Color3">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color4">
+            <color red="1" green="0.95138997759999999" blue="0.92709232470000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Color5">
+            <color red="0.99727746210000001" green="0.91636384260000003" blue="0.89756888879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
