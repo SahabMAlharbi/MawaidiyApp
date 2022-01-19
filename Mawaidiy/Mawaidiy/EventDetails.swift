@@ -15,6 +15,7 @@ class EventDetails: UIViewController {
     @IBOutlet weak var notes: UILabel!
     @IBOutlet weak var endDate: UILabel!
     var events : Events?
+    @IBOutlet weak var eventV: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +44,7 @@ class EventDetails: UIViewController {
             }
         }
         // Do any additional setup after loading the view.
+        eventV.layer.cornerRadius = 10
     }
     
 

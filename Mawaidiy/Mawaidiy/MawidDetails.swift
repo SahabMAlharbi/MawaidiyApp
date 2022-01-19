@@ -19,6 +19,7 @@ class MawidDetails: UIViewController {
     @IBOutlet weak var timeL: UILabel!
     @IBOutlet weak var placeL: UILabel!
     
+    @IBOutlet weak var mawidV: UIView!
     var mawaid : Mawid?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,8 @@ class MawidDetails: UIViewController {
                     }
             }
         }
+        mawidV.layer.cornerRadius = 10
+      
 
     }
     

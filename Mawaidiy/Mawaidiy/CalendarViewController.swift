@@ -326,6 +326,8 @@ extension CalendarViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cvcell", for: indexPath) as! EventCollectionViewCell
+        cell.layer.cornerRadius = 10
+        
         cell.eventName.text = events[indexPath.row].eventName
         cell.date.text = events[indexPath.row].dateString
 

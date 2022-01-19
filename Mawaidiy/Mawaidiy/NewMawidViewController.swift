@@ -32,7 +32,7 @@ class NewMawidViewController: UIViewController {
         let ref = firestore.collection("Mawaid").document()
         // ref is a DocumentReference
         let docid = ref.documentID
-        print(docid)
+        
         // id contains the random ID
         ref.setData(
             [
