@@ -10,7 +10,6 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     let firestore = Firestore.firestore()
-//    let userID = Auth.auth().currentUser?.uid
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!

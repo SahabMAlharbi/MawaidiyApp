@@ -21,15 +21,11 @@ class MawaiydyTV: UIViewController, UITableViewDataSource, UITableViewDelegate {
         mawaiydyTV.delegate = self
         mawaiydyTV.dataSource = self
         loadmawaid()
-//        mawaiydyTV.reloadData()
-//        lodMawid()
-        // Do any additional setup after loading the view.
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMawid))
+
     }
     
 
     
-//
     func loadmawaid() {
         firestore.collection("Mawaid")
             .whereField("userid", isEqualTo: user)
@@ -50,55 +46,7 @@ class MawaiydyTV: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
             )
     }
-//    func deleteData(mawaid: Mawid) {
-//        
-//        // Get a reference to the database
-//        let db = Firestore.firestore()
-//        
-//        // Specify the document to delete
-//        db.collection("Mawaid").document(mawaid.id).delete { error in
-//            
-//            // Check for errors
-//            if error == nil {
-//                // No errors
-//                
-//                // Update the UI from the main thread
-//                DispatchQueue.main.async {
-//                    
-//                    // Remove the todo that was just deleted
-//                    self.mawaid.removeAll { mawaid in
-//                    
-//                        return mawaid.id == mawaid.id
-//                    }
-//                }
-//                
-//                
-//            }
-//        }
-//        
-//    }
-//    @objc func addMawi() {
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "newMawid") as! NewMawidViewController
-//        let nvc = UINavigationController(rootViewController: vc)
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(nvc, animated: true, completion: nil)
-//    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-//    @IBAction func addMawid(_ sender: Any) {
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "newMawid") as! NewMawidViewController
-////        let nvc = UINavigationController(rootViewController: vc)
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: true, completion: nil)
-//    }
-//
 }
 
 extension MawaiydyTV {

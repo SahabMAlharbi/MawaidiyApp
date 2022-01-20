@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
     let user = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        
             DispatchQueue.main.async {
                 self.firestore.collection("Users")
                     .whereField("userID", isEqualTo: self.user )
@@ -50,20 +52,8 @@ class ProfileViewController: UIViewController {
                     }
             }
         
-        mawidL.layer.cornerRadius = 10
-        ageL.layer.cornerRadius = 10
-        ageL.layer.masksToBounds = true
-        pName.layer.cornerRadius = 10
-        pName.layer.masksToBounds = true
-        phoneN.layer.cornerRadius = 10
-        phoneN.layer.masksToBounds = true
-        idnumber.layer.cornerRadius = 10
-        idnumber.layer.masksToBounds = true
-        emailL.layer.cornerRadius = 10
-        emailL.layer.masksToBounds = true
-        // Do any additional setup after loading the view.
+       
         let gesture = UITapGestureRecognizer(target: self, action: #selector(userTappedOnLink))
-        // if labelView is not set userInteractionEnabled, you must do so
         mawidL.isUserInteractionEnabled = true
         mawidL.addGestureRecognizer(gesture)
     }
@@ -96,6 +86,19 @@ class ProfileViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBar
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
+    }
+    func setup(){
+        mawidL.layer.cornerRadius = 10
+        ageL.layer.cornerRadius = 10
+        ageL.layer.masksToBounds = true
+        pName.layer.cornerRadius = 10
+        pName.layer.masksToBounds = true
+        phoneN.layer.cornerRadius = 10
+        phoneN.layer.masksToBounds = true
+        idnumber.layer.cornerRadius = 10
+        idnumber.layer.masksToBounds = true
+        emailL.layer.cornerRadius = 10
+        emailL.layer.masksToBounds = true
     }
 }
 

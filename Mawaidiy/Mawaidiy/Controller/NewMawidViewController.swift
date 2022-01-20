@@ -30,10 +30,8 @@ class NewMawidViewController: UIViewController {
     
     @IBAction func saveNewMawid(_ sender: Any) {
         let ref = firestore.collection("Mawaid").document()
-        // ref is a DocumentReference
         let docid = ref.documentID
         
-        // id contains the random ID
         ref.setData(
             [
                 "clinic Name" : self.clinicName.text!,
@@ -69,15 +67,5 @@ class NewMawidViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
