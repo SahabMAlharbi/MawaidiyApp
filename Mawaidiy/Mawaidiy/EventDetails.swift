@@ -15,6 +15,10 @@ class EventDetails: UIViewController {
     @IBOutlet weak var notes: UILabel!
     @IBOutlet weak var endDate: UILabel!
     var events : Events?
+    var eventss = [Events]()
+
+   
+   
     @IBOutlet weak var eventV: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +51,29 @@ class EventDetails: UIViewController {
         eventV.layer.cornerRadius = 10
     }
     
+    @IBAction func deleteEvent(_ sender: Any) {
+        deleteData(event: events!)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBar
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
+      func deleteData(event: Events) {
+          firestore.collection("Events").document(event.id).delete { error in
+              if error == nil {
+                  DispatchQueue.main.async {
+                        self.eventss.removeAll { event in
+                        return event.id == event.id
+                      }
+                  }
+                  
+                  
+              }
+          }
+          
+      }
 
     /*
     // MARK: - Navigation

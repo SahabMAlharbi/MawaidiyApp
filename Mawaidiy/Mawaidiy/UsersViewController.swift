@@ -75,6 +75,7 @@ struct Users {
     var phoneN : String
 }
 struct Mawid {
+    var id : String
     var clinicName : String
     var patientName : String
     var description : String
@@ -82,6 +83,7 @@ struct Mawid {
     var place : String
 }
 struct Events {
+    var id : String
     var eventName : String
     var startDate: Date
     var dateString: String {

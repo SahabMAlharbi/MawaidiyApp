@@ -15,13 +15,19 @@ class CalendarViewController: UIViewController,EKEventEditViewDelegate, UICollec
     
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
-        firestore.collection("Events").document().setData(
+        let ref = firestore.collection("Events").document()
+        // ref is a DocumentReference
+        let docid = ref.documentID
+        
+        // id contains the random ID
+        ref.setData(
             [
                 "event Name" : self.newEvent?.title! ,
                 "start date" : self.newEvent?.startDate!.formatted() ,
                 "end date" : self.newEvent?.endDate!.formatted() ,
                 "notes" : self.newEvent?.notes! ,
-                "userid" : self.user!
+                "userid" : self.user!,
+                "eventid" : docid
            
             
 
@@ -231,7 +237,7 @@ class CalendarViewController: UIViewController,EKEventEditViewDelegate, UICollec
                         for document in qurySnapShot!.documents {
                             let data = document.data()
                             
-                            self.events.append(Events(eventName: data["event Name"] as! String, startDate: (data["start date"]as? Timestamp)?.dateValue() ?? Date(), endDate: (data["end date"]as? Timestamp)?.dateValue() ?? Date(), notes: data["notes"] as! String))
+                            self.events.append(Events(id:  data["eventid"] as! String, eventName: data["event Name"] as! String, startDate: (data["start date"]as? Timestamp)?.dateValue() ?? Date(), endDate: (data["end date"]as? Timestamp)?.dateValue() ?? Date(), notes: data["notes"] as! String))
                             
                         }
                     }

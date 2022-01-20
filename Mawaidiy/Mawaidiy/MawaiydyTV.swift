@@ -42,7 +42,7 @@ class MawaiydyTV: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         for document in qurySnapShot!.documents {
                             let data = document.data()
                             
-                            self.mawaid.append(Mawid(clinicName: data["clinic Name"] as! String , patientName:  data["patient Name"] as! String , description:  data["description"] as! String , time:  data["time"] as! String , place:  data["place"] as! String ))
+                            self.mawaid.append(Mawid(id: data["mawidID"] as! String, clinicName: data["clinic Name"] as! String , patientName:  data["patient Name"] as! String , description:  data["description"] as! String , time:  data["time"] as! String , place:  data["place"] as! String ))
                             
                         }
                     }
@@ -50,6 +50,33 @@ class MawaiydyTV: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
             )
     }
+//    func deleteData(mawaid: Mawid) {
+//        
+//        // Get a reference to the database
+//        let db = Firestore.firestore()
+//        
+//        // Specify the document to delete
+//        db.collection("Mawaid").document(mawaid.id).delete { error in
+//            
+//            // Check for errors
+//            if error == nil {
+//                // No errors
+//                
+//                // Update the UI from the main thread
+//                DispatchQueue.main.async {
+//                    
+//                    // Remove the todo that was just deleted
+//                    self.mawaid.removeAll { mawaid in
+//                    
+//                        return mawaid.id == mawaid.id
+//                    }
+//                }
+//                
+//                
+//            }
+//        }
+//        
+//    }
 //    @objc func addMawi() {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "newMawid") as! NewMawidViewController
 //        let nvc = UINavigationController(rootViewController: vc)
